@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import Card from './Components/Card/Card'
-
 import ImageCard from './Components/UI/ImageCard'
 
 const App = () => {
@@ -20,9 +18,13 @@ const App = () => {
       .catch(err => console.log(err))
   }, [])
   return (
-    <Card>
-      <ImageCard />
-    </Card>
+    <div className="container mx-auto">
+      <div className="grid grid-cols-3 grid-rows-4 gap-4">
+        {images.map(image => (
+          <ImageCard key={image.id} image={image}/>
+        ))}
+      </div>
+    </div>
   )
 }
 export default App

@@ -18,7 +18,7 @@ const Icons = () => {
         <li className="mr-3">
           <div>
             <FontAwesomeIcon className="px-2" icon={faComment} />
-            <strong></strong>
+            <strong>2000</strong>
           </div>
         </li>
         <li className="mr-3">
