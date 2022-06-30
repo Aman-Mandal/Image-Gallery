@@ -4,7 +4,7 @@ import ImageCard from './Components/UI/ImageCard'
 const App = () => {
   const [images, setImages] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [term, setTerm] = useState('')
+  const [term, setTerm] = useState('cat')
 
   useEffect(() => {
     fetch(
@@ -12,16 +12,17 @@ const App = () => {
     )
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         setImages(data.hits)
         setIsLoading(false)
       })
       .catch(err => console.log(err))
   }, [])
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-3 grid-rows-4 gap-4">
+    <div className="container mx-auto my-7">
+      <div className="grid grid-cols-3 gap-6 md:">
         {images.map(image => (
-          <ImageCard key={image.id} image={image}/>
+          <ImageCard key={image.id} image={image} />
         ))}
       </div>
     </div>

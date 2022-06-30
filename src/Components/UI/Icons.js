@@ -5,26 +5,27 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 
-const Icons = () => {
+const Icons = (props) => {
+  console.log(props)
   return (
     <>
       <ul className="flex ">
         <li className="mr-3">
           <div>
             <FontAwesomeIcon className="px-2" icon={faThumbsUp} />
-            <strong>4000</strong>
+            <strong>{props.likes}</strong>
           </div>
         </li>
         <li className="mr-3">
           <div>
             <FontAwesomeIcon className="px-2" icon={faComment} />
-            <strong>2000</strong>
+            <strong>{props.comments}</strong>
           </div>
         </li>
         <li className="mr-3">
           <div>
             <FontAwesomeIcon className="px-2" icon={faDownload} />
-            <strong>8000</strong>
+            <strong>{props.downloads}</strong>
           </div>
         </li>
       </ul>

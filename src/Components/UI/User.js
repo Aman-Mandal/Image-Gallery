@@ -1,14 +1,14 @@
-const User = () => {
+const User = props => {
   return (
     <>
       <div className="py-4">
         <div className="flex">
           <img
-            src="https://source.unsplash.com/random"
+            src={props.userImage}
             className="w-11 h-11 rounded-full "
           />
           <h3 className="flex px-2 font-bold text-blue-500 text-xl items-center">
-            Aman Mandal
+            {props.username}
           </h3>
         </div>
       </div>
